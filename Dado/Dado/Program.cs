@@ -10,22 +10,26 @@ namespace Dado
            
             Console.WriteLine("Precione Enter para visualizar ");
             while (Console.ReadKey().Key == ConsoleKey.Enter) {
-                int n1;
                 Console.WriteLine("nueva visulacion");
-                Console.WriteLine("            +++++++    ");
-                Console.WriteLine("            +     +     ");
-                Console.WriteLine("            +     +     ");
-                Console.WriteLine("            +     +     ");
-                Console.WriteLine("+++++++++++++++++++++++++");
-                Console.WriteLine("+     +     +     +     +");
-                Console.WriteLine("+     +     +     +     +");
-                Console.WriteLine("+     +     +     +     +");
-                Console.WriteLine("+++++++++++++++++++++++++");
-                Console.WriteLine("            +     +   ");
-                Console.WriteLine("            +     +     ");
-                Console.WriteLine("            +     +     ");
-                Console.WriteLine("            +++++++      ");
+                Program dado = new Program();
+                dado.dibujar();
             }
+        }
+        private void dibujar() {
+            
+            Console.WriteLine("            +++++++     ");
+            Console.WriteLine("            +     +     ");
+            Console.WriteLine("            +     +     ");
+            Console.WriteLine("            +     +     ");
+            Console.WriteLine("+++++++++++++++++++++++++");
+            Console.WriteLine("+     +     +     +     +");
+            Console.WriteLine("+     +     +     +     +");
+            Console.WriteLine("+     +     +     +     +");
+            Console.WriteLine("+++++++++++++++++++++++++");
+            Console.WriteLine("            +     +      ");
+            Console.WriteLine("            +     +     ");
+            Console.WriteLine("            +     +     ");
+            Console.WriteLine("            +++++++      ");
         }
         }
     }
