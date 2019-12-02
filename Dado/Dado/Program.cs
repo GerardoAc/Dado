@@ -13,9 +13,8 @@ namespace Dado
             {
                 Console.WriteLine("nueva visulacion");
                 Program dado = new Program();
-                int[] numeros=new int[3];
 
-                dado.dibujar(4,1,5);
+                dado.llenarValoresDado();
 
 
                     
@@ -38,6 +37,47 @@ namespace Dado
             Console.WriteLine("                #   {0}    #         ", 7 - n0);
             Console.WriteLine("                #        #         ");
             Console.WriteLine("                ##########         ");
+
+        }
+             private void llenarValoresDado()
+        {
+            int[] numerosCubo = new int[3];
+            int valorLado;
+
+            for (int x = 0; x < numerosCubo.Length; x++)
+            {
+                numerosCubo[x] = 0;
+            }
+            while (numerosCubo[0] == 0 || numerosCubo[1] == 0 || numerosCubo[2] == 0)
+            {
+                Random random = new Random();
+                if (numerosCubo[0] == 0)
+                {
+                    valorLado = random.Next(1, 6);
+                    numerosCubo[0] = valorLado;
+                }
+
+                if (numerosCubo[1] == 0 && numerosCubo[0] != 0)
+                {
+                    valorLado = random.Next(1, 7);
+                    if (valorLado != numerosCubo[0] && valorLado != 7 - numerosCubo[0])
+                    {
+                        numerosCubo[1] = valorLado;
+                    }
+                }
+                if (numerosCubo[1] != 0 && numerosCubo[0] != 0 && numerosCubo[2] == 0)
+                {
+                    valorLado = random.Next(1, 7);
+                    if (valorLado != numerosCubo[0] && valorLado != 7 - numerosCubo[0] && valorLado != numerosCubo[1] && valorLado != 7 - numerosCubo[1])
+                    {
+                        numerosCubo[2] = valorLado;
+                    }
+                }
+
+
+            }
+
+            dibujar(numerosCubo[0], numerosCubo[1], numerosCubo[2]);
         }
 
     }
