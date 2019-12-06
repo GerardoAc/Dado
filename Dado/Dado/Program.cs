@@ -12,10 +12,11 @@ namespace Dado
             while (Console.ReadKey().Key == ConsoleKey.Enter)
             {
                 Console.WriteLine("nueva visulacion");
-                Program dado = new Program();
-
-                dado.llenarValoresDado();
-
+                Program dado1 = new Program();
+                Program dado2 = new Program(); 
+                //llenar dados
+                dado1.llenarValoresDado();
+                dado2.llenarValoresDado();
 
                     
              
