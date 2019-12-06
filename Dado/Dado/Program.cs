@@ -12,13 +12,31 @@ namespace Dado
             while (Console.ReadKey().Key == ConsoleKey.Enter)
             {
                 Console.WriteLine("nueva visulacion");
-                Program dado = new Program();
+                Program dado1 = new Program();
+                Program dado2 = new Program();
+                //llenar dados
+                
+                while (dado1.numeros[2] == dado2.numeros[2])
+                {
+                    dado1.llenarValoresDado();
+                    dado2.llenarValoresDado();
+                    if (dado1.numeros[2] != dado2.numeros[2])
+                    {
+                        dado1.dibujar(dado1.numeros[0], dado1.numeros[2], dado1.numeros[4]);
+                        dado2.dibujar(dado2.numeros[0], dado2.numeros[2], dado2.numeros[4]);
+                        Console.WriteLine("suma {0}+{1}={2} superior", dado1.numeros[0], dado2.numeros[0], dado1.numeros[0] + dado2.numeros[0]);
+                        Console.WriteLine("suma {0}+{1}={2}", dado1.numeros[1], dado2.numeros[1], dado1.numeros[1] + dado2.numeros[1]);
+                        Console.WriteLine("suma {0}+{1}={2} central", dado1.numeros[2], dado2.numeros[2], dado1.numeros[2] + dado2.numeros[2]);
+                        Console.WriteLine("suma {0}+{1}={2}", dado1.numeros[3], dado2.numeros[3], dado1.numeros[3] + dado2.numeros[3]);
+                        Console.WriteLine("suma {0}+{1}={2} inferior", dado1.numeros[4], dado2.numeros[4], dado1.numeros[4] + dado2.numeros[4]);
+                        Console.WriteLine("suma {0}+{1}={2}", dado1.numeros[5], dado2.numeros[5], dado1.numeros[5] + dado2.numeros[5]);
+                    }
+                }
 
-                dado.llenarValoresDado();
 
 
-                    
-             
+
+
             }
         }
         private void dibujar(int n0, int n1, int n2)
@@ -76,10 +94,18 @@ namespace Dado
 
 
             }
-
-            dibujar(numerosCubo[0], numerosCubo[1], numerosCubo[2]);
+            guardarLados(numerosCubo[0], numerosCubo[1], numerosCubo[2]);
+            //dibujar(numerosCubo[0], numerosCubo[1], numerosCubo[2]);
         }
-
+        int[] numeros = new int[6];
+        private void guardarLados(int n0, int n1,int n2) {
+            numeros[0] = n0;
+            numeros[1] =7- n0;
+            numeros[2] = n1;
+            numeros[3] = 7 - n1;
+            numeros[4] = n2;
+            numeros[5] = 7 - n2;
+        }
+       
     }
     }
-
