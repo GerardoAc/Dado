@@ -17,9 +17,19 @@ namespace Dado
                 //llenar dados
                 dado1.llenarValoresDado();
                 dado2.llenarValoresDado();
+                Console.WriteLine("suma {0}+{1}={2}",dado1.numeros[0],dado2.numeros[0],dado1.numeros[0]+dado2.numeros[0]);
+                Console.WriteLine("suma {0}+{1}={2}", dado1.numeros[1], dado2.numeros[1], dado1.numeros[1] + dado2.numeros[1]);
+                Console.WriteLine("suma {0}+{1}={2}", dado1.numeros[2], dado2.numeros[2], dado1.numeros[2] + dado2.numeros[2]);
+                Console.WriteLine("suma {0}+{1}={2}", dado1.numeros[3], dado2.numeros[3], dado1.numeros[3] + dado2.numeros[3]);
+                Console.WriteLine("suma {0}+{1}={2}", dado1.numeros[4], dado2.numeros[4], dado1.numeros[4] + dado2.numeros[4]);
+                Console.WriteLine("suma {0}+{1}={2}", dado1.numeros[5], dado2.numeros[5], dado1.numeros[5] + dado2.numeros[5]);
+              
 
-                    
-             
+
+
+
+
+
             }
         }
         private void dibujar(int n0, int n1, int n2)
@@ -77,10 +87,18 @@ namespace Dado
 
 
             }
-
+            sumar(numerosCubo[0], numerosCubo[1], numerosCubo[2]);
             dibujar(numerosCubo[0], numerosCubo[1], numerosCubo[2]);
         }
-
+        int[] numeros = new int[6];
+        private void sumar(int n0, int n1,int n2) {
+            numeros[0] = n0;
+            numeros[1] =7- n0;
+            numeros[2] = n1;
+            numeros[3] = 7 - n1;
+            numeros[4] = n2;
+            numeros[5] = 7 - n2;
+        }
+       
     }
     }
-
